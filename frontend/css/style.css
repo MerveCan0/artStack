@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
 }
 
@@ -48,10 +48,11 @@ body {
     letter-spacing: 2px;
 }
 
-.nav-btn{
-    border: 1px #fff solid;
+.nav-btn {
+    border: 1px #EF4444 solid;
     padding: 9px 20px;
     border-radius: 50px;
+    color: #ffffff !important;
 }
 
 /*
@@ -80,13 +81,15 @@ clamp(min, ideal, max)
     align-items: center;
     justify-content: center;
     background: #111;
-    padding-top: 80px; /* navbar yüksekliği kadar boşluk */
+    padding-top: 80px;
+    /* navbar yüksekliği kadar boşluk */
     position: relative;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1; /* glow'un altına yazılar gelmesin */
+    z-index: 1;
+    /* glow'un altına yazılar gelmesin */
     overflow: hidden;
 
     width: 90%;
