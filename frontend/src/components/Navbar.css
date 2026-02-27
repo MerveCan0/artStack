@@ -1,0 +1,114 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 4%;
+    background-color: #141414;
+}
+
+.action {
+    color: var(--third);
+}
+
+/*
+
+  background: linear-gradient(90deg, var(--main-color) 0%, var(--third) 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  font-weight: 800;
+*/
+
+.nav-logo img {
+    margin: 0;
+    width: 3rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* Noktaları kaldırır */
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.nav-item {
+    color: var(--white-ton);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    position: relative;
+    padding: 5px 0;
+
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--white-ton);
+}
+
+.nav-item:not(.nav-auth)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    /* Başlangıçta çizgi yok */
+    height: 2px;
+    /* Çizgi kalınlığı */
+    bottom: 0;
+    left: 50%;
+    /* Ortadan başlaması için */
+    background-color: var(--main-color);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    /* Tam merkezi yakalamak için */
+}
+
+.nav-item:hover::after {
+    width: 100%;
+    /* Üzerine gelince genişlik tam boy olur */
+}
+
+.nav-item:hover .neon-icon {
+    stroke: white;
+    /* Lucide ikonlarında renk stroke ile değişir */
+    transition: stroke 0.3s ease;
+}
+
+.login-btn {
+    background-color: var(--main-color);
+    /* main-color değişkenini kullanman daha iyi olur */
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+
+    /* ZARİF GÖLGE */
+    /* İlk değerler yayılımı, son değer ise opaklığı (0.2) belirler */
+    box-shadow: 0 4px 12px rgba(247, 68, 68, 0.25);
+
+    /* Geçiş efektlerine shadow'u da ekledik */
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    /* Navbar butonunda 2px yükselme yeterlidir */
+    background-color: #ff5555;
+    /* Çok hafif bir renk açılması */
+
+    /* Hover anında gölgeyi biraz daha belirginleştiriyoruz */
+    box-shadow: 0 6px 15px rgba(247, 68, 68, 0.35);
+}

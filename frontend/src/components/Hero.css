@@ -1,0 +1,186 @@
+.hero-con {
+  min-height: calc(100vh - 70px);
+  /* navbar yüksekliği kadar düş */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  /* Arka Plan Ayarları */
+  /* %80 ile %90 arası bir karartma (0.8 - 0.9) genellikle en iyi sonucu verir */
+  background: radial-gradient(circle at center,
+      rgba(24, 24, 24, 0.55) 0%,
+      /* Merkeze yakın yerler daha aydınlık (şeffaf) */
+      rgba(24, 24, 24, 0.95) 80%
+      /* Kenarlara doğru kararır */
+    ),
+    url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 8vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 850px;
+  text-align: center;
+}
+
+
+.con-bor {
+  background-color: rgba(69, 69, 69, 0.663);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 15px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.con-bor span {
+  color: var(--white-ton);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Başlık */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: white;
+  margin: 0;
+}
+
+.accent {
+  color: var(--main-color);
+  /* Neon Kırmızı */
+}
+
+.accent-sec {
+  letter-spacing: 3px;
+}
+
+/* Açıklama */
+.hero-description {
+  color: var(--white-ton);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0;
+}
+
+/* Buton Grubu */
+.con-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Kırmızı ve gölgeli buton */
+.sign-but {
+  background: linear-gradient(90deg, var(--main-color) 0%, var(--second) 100%);
+  color: var(--white-ton);
+  padding: 16px 36px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  /* Sabit neon gölgesi */
+}
+
+/* İçi boş, kırmızı borderlı buton */
+.log-but {
+  background-color: transparent;
+  color: var(--white-ton);
+  padding: 16px 36px;
+  border: 2px solid var(--main-color);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 1. Kırmızı Buton (Sign Up) Hover */
+.sign-but:hover {
+  /* Yukarı kalkma efekti */
+  transform: translateY(-5px);
+
+  /* Gölgeyi ve parlamayı artırıyoruz */
+  box-shadow: 0 10px 15px var(--main-glow);
+
+  /* Hafif bir parlaklık artışı */
+  filter: brightness(1.1);
+
+  transition: all 0.3s ease;
+  /* Yumuşak geçiş için şart */
+}
+
+/* 2. Şeffaf Buton (Login) Hover */
+.log-but:hover {
+  /* Yukarı kalkma efekti */
+  transform: translateY(-5px);
+
+  /* Saydam kırmızı arka plan */
+  background-color: rgba(247, 68, 68, 0.15);
+
+  /* Gölge ekleyerek derinlik kazandırıyoruz */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s ease;
+}
+
+/* Mevcut buton sınıflarına 'transition' eklemeyi unutma ki hover aniden olmasın */
+.sign-but,
+.log-but {
+  transition: all 0.3s ease;
+}
+
+
+.scroll-icon {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  /* Animasyonu buraya bağlıyoruz */
+  animation: scroll-pulse 2.5s ease-in-out infinite;
+}
+
+/* Animasyon Kısmı */
+@keyframes scroll-pulse {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, 0);
+    filter: drop-shadow(0 0 0 transparent);
+    /* Başlangıçta parıltı yok */
+  }
+
+  /* PARILTI VE SÜZÜLME ANI (50%) */
+  50% {
+    opacity: 1;
+    /* En belirgin olduğu an */
+    transform: translate(-50%, 10px);
+    /* 8px'i 10px yaptık, süzülme daha belirgin */
+
+    /* Neon Parıltı Efekti */
+    /* --main-color değişkenini kullanarak ikonun etrafına ışık yayarız */
+    filter: drop-shadow(0 0 8px var(--main-color)) drop-shadow(0 0 15px var(--main-color));
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, 0);
+    filter: drop-shadow(0 0 0 transparent);
+    /* Sönerken parıltı kaybolur */
+  }
+}

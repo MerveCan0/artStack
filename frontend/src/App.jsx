@@ -1,14 +1,17 @@
-import Navbar from './components/Navbar'; // Parçayı içeri alıyoruz
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Information from './components/Information';
+
+
 
 function App() {
   return (
-    <div>
-      <Navbar /> {/* Parçayı burada kullanıyoruz */}
-      <main>
-        <h2>Hoş Geldin Mero!</h2>
-        <p>Pinterest benzeri projenin temelleri burada atılıyor.</p>
-      </main>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Features />
+    </>
   );
 }
 
