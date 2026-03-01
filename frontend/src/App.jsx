@@ -1,16 +1,15 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Information from './components/Information';
-
-
+import LandingPage from './pages/LandingPage';
+// import Dashboard from './pages/Dashboard'; // Asıl uygulamaya geçtiğinde bunu açacaksın
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Features />
+      {/* Şimdilik sadece ön tanıtım sayfanı gösteriyoruz */}
+      <LandingPage />
+      
+      {/* İleride buraya "Router" gelecek. 
+         Giriş yapıldıysa <Dashboard />, yapılmadıysa <LandingPage /> gibi.
+      */}
     </>
   );
 }
