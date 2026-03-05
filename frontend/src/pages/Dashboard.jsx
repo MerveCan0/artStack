@@ -1,13 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import "./DashBoard.css";
+import "./Dashboard.css";
 
-function DashBoard() {
+function Dashboard() {
     return (
         <div className="dashboard-wrapper">
-            <Navbar />
-            
             <main className="dashboard-content">
                 <div className="dashboard-hero">
                     <h1 className="db-title">
@@ -22,10 +18,8 @@ function DashBoard() {
                     </div>
                 </div>
             </main>
-
-            <Footer />
         </div>
     );
 }
 
-export default DashBoard;
+export default Dashboard;

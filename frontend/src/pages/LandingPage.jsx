@@ -4,41 +4,64 @@ import {
     Maximize2,
     Layers, Brush, Box, Palette
 } from 'lucide-react';
-import Navbar from '../components/Navbar'; // Navbar her sayfada olacağı için component kalmalı
-import Footer from '../components/Footer';
+
+import { useNavigate } from 'react-router-dom';
 
 import "./LandingPage.css"; // CSS'leri burada toplayabilirsin
 
 
 
-// --- HERO PARÇASI ---
-const Hero = () => (
-    <section className="hero-con">
-        <div className="container">
-            <div className="con-bor">
-                <span><Sparkles className="neon-sparkle" size={16} color={"#f74444"} /></span>
-                <span>Where artists meet the world</span>
+
+
+// LandingPage.jsx içindeki Hero parçası
+const Hero = () => {
+    const navigate = useNavigate();
+
+    // Bu fonksiyon gidilecek sayfaya 'mode' bilgisini taşır
+    const goToAuth = (mode) => {
+        navigate('/login', { state: { mode: mode } });
+    };
+
+    return (
+        <section className="hero-con">
+
+            <div className="container">
+
+                <div className="con-bor">
+                    <span><Sparkles className="neon-sparkle" size={16} color={"#f74444"} /></span>
+                    <span>Where artists meet the world</span>
+                </div>
+
+                <h1 className="hero-title">
+
+                    Share Your <span className="accent">Art</span>, <br />
+                    <span className="accent-sec">Inspire the World</span>
+
+                </h1>
+
+                <p className="hero-description">
+                    A creative platform where artists showcase their work,
+                    receive feedback, and connect with a vibrant community.
+                </p>
+
+                <div className="con-buttons">
+                    <button className="sign-but" onClick={() => goToAuth('register')}>
+                        Get Started Free <span className="arrow">→</span>
+                    </button>
+                    <button className="log-but" onClick={() => goToAuth('login')}>
+                        Login
+                    </button>
+                </div>
+
+                <div className="scroll-icon" style={{ display: "none" }}>
+                    <ChevronDown size={32} strokeWidth={1} />
+                </div>
+
             </div>
-            <h1 className="hero-title">
-                Share Your <span className="accent">Art</span>, <br />
-                <span className="accent-sec">Inspire the World</span>
-            </h1>
-            <p className="hero-description">
-                A creative platform where artists showcase their work,
-                receive feedback, and connect with a vibrant community.
-            </p>
-            <div className="con-buttons">
-                <button className="sign-but">
-                    Get Started Free <span className="arrow">→</span>
-                </button>
-                <button className="log-but">Login</button>
-            </div>
-            <div className="scroll-icon" style={{ display: "none" }}>
-                <ChevronDown size={32} strokeWidth={1} />
-            </div>
-        </div>
-    </section>
-);
+
+        </section>
+    );
+};
 
 // --- FEATURES PARÇASI ---
 const Features = () => (
@@ -129,14 +152,12 @@ const Information = () => (
 function LandingPage() {
     return (
         <div className="landing-wrapper">
-            <Navbar />
             <main className="landing-content">
                 <Hero />
                 <Features />
                 <Information />
 
             </main>
-            <Footer />
         </div>
     );
 }
