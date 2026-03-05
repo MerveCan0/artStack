@@ -2,10 +2,14 @@ import React from 'react';
 import {
     Sparkles, ChevronDown, Image, MessageCircle, Users, TrendingUp, Upload,
     Maximize2,
-    Layers
+    Layers, Brush, Box, Palette
 } from 'lucide-react';
 import Navbar from '../components/Navbar'; // Navbar her sayfada olacağı için component kalmalı
+import Footer from '../components/Footer';
+
 import "./LandingPage.css"; // CSS'leri burada toplayabilirsin
+
+
 
 // --- HERO PARÇASI ---
 const Hero = () => (
@@ -97,8 +101,25 @@ const Information = () => (
                 <button className="start-btn">Start Sharing</button>
             </div>
         </div>
-        <div className='info-container'>
-           <div>hfsjkdfk</div>
+
+        <div className="info-container gallery">
+
+            <div className="art-card tall">
+                <Image size={40} />
+            </div>
+
+            <div className="art-card">
+                <Brush size={40} />
+            </div>
+
+            <div className="art-card">
+                <Palette size={40} />
+            </div>
+
+            <div className="art-card wide">
+                <Box size={40} />
+            </div>
+
         </div>
     </section>
 
@@ -113,7 +134,9 @@ function LandingPage() {
                 <Hero />
                 <Features />
                 <Information />
+
             </main>
+            <Footer />
         </div>
     );
 }

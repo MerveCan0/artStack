@@ -1,9 +1,11 @@
 :root {
+  --text-color: rgb(226, 226, 226);
   --main-color: #f74444; /* Senin seçtiğin neon kırmızı */
   --main-glow: rgba(247, 68, 68, 0.3); /* Gölge için transparan hali */
   --bg-dark: #181818;
   --second: #ff8442;
   --third: #ff4262;
+  --dark-text: rgb(219, 219, 219);
 }
 
 * {

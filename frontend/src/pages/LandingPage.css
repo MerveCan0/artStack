@@ -1,13 +1,9 @@
 .hero-con {
-    min-height: calc(100vh - 70px);
-    /* navbar yüksekliği kadar düş */
+    min-height: 95vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
 
-    /* Arka Plan Ayarları */
-    /* %80 ile %90 arası bir karartma (0.8 - 0.9) genellikle en iyi sonucu verir */
     background: radial-gradient(circle at center,
             rgba(24, 24, 24, 0.55) 0%,
             /* Merkeze yakın yerler daha aydınlık (şeffaf) */
@@ -21,6 +17,7 @@
 }
 
 .container {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +26,19 @@
     text-align: center;
 }
 
+.landing-wrapper {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-content {
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .con-bor {
     background-color: rgba(69, 69, 69, 0.663);
@@ -325,18 +335,15 @@
 
 
 
-
-/* Ana Section: Yan Yana Düzen */
 .information-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    /* Boşluğu biraz artırmak ferahlatır */
     padding: 120px 8%;
-    align-items: center;
     min-height: 80vh;
-    background-color: transparent;
-    /* Eğer arka planın koyuysa sırıtmaz */
+
+    align-items: stretch;
+    /* önemli */
 }
 
 /* Sol Taraf: Metin İçeriği */
@@ -345,7 +352,6 @@
     flex-direction: column;
     gap: 25px;
     text-align: left;
-    background-color: pink;
 }
 
 /* Üst Başlıklar (Features'tan gelen stillerle uyumlu) */
@@ -385,4 +391,38 @@
 .start-btn:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 30px var(--main-glow);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+    gap: 16px;
+    height: 100%;
+
+    align-content: stretch;
+
+}
+
+.art-card {
+    background: #343434;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+.wide {
+    grid-column: span 2;
 }
